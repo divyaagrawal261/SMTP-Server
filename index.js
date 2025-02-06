@@ -19,8 +19,8 @@ const server = new SMTPServer({
         console.log(`Session ID: ${session.id}`);
     },
     onData(stream, session, callback) {
-        stream.on('data', (chunk) => {
-            console.log(`Received data chunk: ${chunk.toString()}`);
+        stream.on('data', (data) => {
+            console.log(`Received data chunk: ${data.toString()}`);
         });
         stream.on('end', () => {
             console.log('End of data stream');
